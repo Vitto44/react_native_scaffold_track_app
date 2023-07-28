@@ -3,7 +3,7 @@ import { Text, TouchableOpacity, View, TextInput } from "react-native";
 import { Calendar, DateData } from 'react-native-calendars';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from '../../../styles';
-
+import PersonalInfoPopup from './popup';
 import { PersonalInfoProps } from '../../data';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -176,7 +176,12 @@ const CalendarScreen: React.FC = () => {
         Personal Info
       </Icon.Button>
       </View>
-  
+    
+      <PersonalInfoPopup
+        isVisible={isPopupVisible}
+        onClose={() => setPopupVisible(false)}
+        onSave={onSave}
+      />
     </View>
   );
 };
