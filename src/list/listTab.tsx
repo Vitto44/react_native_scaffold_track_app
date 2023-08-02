@@ -102,7 +102,15 @@ const ListScreen: React.FC = () => {
           />
         )}
       />
-     
+      {selectedItem &&
+        <Popup
+          isVisible={isPopupVisible}
+          onClose={() => setPopupVisible(false)}
+          item={selectedItem}
+          onSelect={handleSelect}
+          list={pickupList}
+        />
+      }
     </View>
   );
 };
